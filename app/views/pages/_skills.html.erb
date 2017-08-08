@@ -1,0 +1,8 @@
+<div id="skillset">
+	<% @skills.each do |skill| %>
+		<p class="skill_name">
+			<%= skill.name %>
+		</p>
+		<div id="<%= downcase_name(skill.name) %>" data-proficiency="<%= skill.return_float %>"></div>
+	<% end %>
+</div>

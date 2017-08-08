@@ -1,0 +1,34 @@
+$(".foreground_image").css('visibility', 'visible').addClass("animated fadeIn");
+// show foregroud png on section load
+
+<% 3.times do |i| %>
+	setTimeout(
+		function() {
+		<% if i != 2 %>
+			backgroundOut(<%= i %>);
+		<% end %>
+		// keep last background from remove timer
+		var background = $('.background_image');
+
+		if (background.hasClass("animated fadeOutRight")) {
+			background.removeClass("animated fadeOutRight");
+		}
+		// remove the hide animation if the object has it
+
+		background.css('background-image','url(/assets/background<%= i %>.png)').addClass("animated fadeInLeft");
+		// replace background image with next in index while adding animation
+		}, 
+	<%= 2000*(i) + 2000 %>);
+	// sequence 2, 4, 6 s timeout
+<% end %> 
+
+function backgroundOut(i) {
+	setTimeout(
+		function() {
+			$(".background_image")
+			.removeClass("animated fadeInLeft")
+			.addClass("animated fadeOutRight"); },
+			// remove in animation and add out animation
+	1400);
+}
+

@@ -1,0 +1,31 @@
+<div class="parallax-container">
+	<div class="parallax animated fadeIn">
+		<%= image_tag("intro.jpg") %>
+	</div>
+	<div class="intro_header_text" hidden>
+		<p class="large_intro_header_text">
+			Chris <br/>
+			Ching
+		</p>
+
+		<p class="small_intro_header_text">
+			full stack web developer
+		</p>
+	</div>
+</div>
+
+<% @section.each do |section| %>
+	<div class="section row <%= section.color(section.index) %>" id="<%= downcase_name(section.name) %>">
+		<div class="col-xs-3 left_section">
+			<%= "#{section.name}".titleize %>
+		</div>
+		<div class="col-xs-1">
+		</div>
+		<div class="col-xs-8">
+			<%= render "#{downcase_name(section.name)}" %>
+		</div>
+	</div>
+<% end %> 
+
+
+      

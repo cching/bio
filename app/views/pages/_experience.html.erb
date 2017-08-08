@@ -1,0 +1,22 @@
+<% [2, 3].each do |array_index| %>
+	<div class="row" id="experience_row">
+		<% Experience.display_order(array_index).each do |experience| %>
+			<div class="col-lg-4 col_experience_small">
+				<div class="col_experience">
+					<span class="glyphicon glyphicon-<%= experience.glyphicon %>" aria-hidden="true"></span>
+					<p class="experience_title">
+						<%= experience.title %>
+					</p>
+					<p class="experience_description">
+						<%= experience.description %>
+					</p>
+					<ul class="experience_description_cont">
+						<% experience.duties.each do |duty| %>
+							<li><%= duty.name %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		<% end %>
+	</div>
+<% end %>
