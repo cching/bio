@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "rmagick", "2.13.3", :require => "RMagick"
 
+gem "paperclip"
+
 gem 'aws-sdk', '~> 2.0.0'
 
 gem 'sidekiq'
