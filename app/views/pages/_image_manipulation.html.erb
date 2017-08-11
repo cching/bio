@@ -9,10 +9,17 @@
 		<%= image_tag("image_manip.png", class: "foreground_image") %>
 	</div>
 	<div class="col-lg-4">
-		text
+		<div class="text_log">
+			<% checkbox_items.each_with_index do |item, i| %>
+				<input type="checkbox" id="checkbox_<%= i %>" disabled/>
+	     		<label for="checkbox_<%= i %>"><%= item.html_safe %></label><br/>
+			<% end %>
+		</div>
 	</div>
-	<div class="col-lg-4">
-		image
+	<div class="col-lg-4" id="composite">
+		<div class="load_container">
+			<div class="loader"></div>
+		</div>
 	</div>
 </div>
 

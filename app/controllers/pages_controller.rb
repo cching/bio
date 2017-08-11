@@ -8,4 +8,17 @@ class PagesController < ApplicationController
   def image_manipulation
   	respond_to :js
   end
+
+  def process_image
+    @image = UploadFile.create
+    @job_id = ImageImport.perform_async(@image.id)
+    # Queue image for background job
+  	respond_to :js
+  end
+
+  def update_state
+    @image = UploadFile.find(params[:id].to_i)
+    # Update the state of the image after being queued for the background job to update display checkboxes
+    respond_to :js
+  end
 end

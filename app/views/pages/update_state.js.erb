@@ -1,0 +1,33 @@
+<% if @image.composited? %>
+	$("#checkbox_2").prop('checked', true);
+<% end %>
+// Check the 3rd checkbox if the image has been composited
+
+<% if @image.file_name? %>
+	$("#checkbox_3").prop('checked', true);
+<% end %>
+// Check the 4th checkbox if the image has been uploaded
+
+<% if @image.completed? %>
+	$("#checkbox_4").prop('checked', true);
+
+	var composite = $("#composite");
+	if (!composite.hasClass("composited")) {
+		composite.append("<div class='composite_background'></div>");
+		// prepare the div to add the background from s3
+		composite.addClass("composited");
+		// add class to add a state to the div to prevent the action from triggering from refresh function
+		$(".composite_background").css('background-image','url(<%= @image.public_url %>)');
+		// add s3 image to div background
+		setTimeout(
+			function() { 
+				$('.load_container').html("").css("padding-top", '0px');
+				
+				$(".composite_background").css('visibility', 'visible').addClass("animated fadeIn");
+			}, 1500);
+
+		// timeout function to let image load before displaying
+	}
+<% end %>
+// Check last checkbox if job is done after cleanup
+

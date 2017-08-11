@@ -1,0 +1,15 @@
+$(".job_id").each(function () {
+	$(this).html("(#<%= @job_id %>)");
+});
+// Set the job ID in the description
+
+var reload = setInterval(function(){
+	$.get("/pages/update_state?id=<%= @image.id %>", { 
+	});
+}, 700);
+// Refresh the image object every 0.7s to get the current state from the background job
+
+setTimeout(function() {
+    clearInterval(reload);
+}, 30000);
+// Kill refresh after 30s

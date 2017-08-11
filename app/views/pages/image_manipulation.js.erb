@@ -1,4 +1,5 @@
 $(".foreground_image").css('visibility', 'visible').addClass("animated fadeIn");
+$(".text_log").css('visibility', 'visible').addClass("animated fadeIn");
 // show foregroud png on section load
 
 <% 3.times do |i| %>
@@ -14,6 +15,14 @@ $(".foreground_image").css('visibility', 'visible').addClass("animated fadeIn");
 			background.removeClass("animated fadeOutRight");
 		}
 		// remove the hide animation if the object has it
+
+		<% if i == 2 %>
+		setTimeout(
+			function() {
+			$("#checkbox_0").prop('checked', true);
+			$(".load_container").css('visibility', 'visible').addClass("animated fadeIn");
+		}, 800);
+		<% end %>
 
 		background.css('background-image','url(/assets/background<%= i %>.png)').addClass("animated fadeInLeft");
 		// replace background image with next in index while adding animation
@@ -31,4 +40,13 @@ function backgroundOut(i) {
 			// remove in animation and add out animation
 	1400);
 }
+
+setTimeout(
+	function() {
+		$.get("/pages/process_image", { 
+		});
+		$("#checkbox_1").prop('checked', true);
+	}, 8200
+);
+// Queue background job and check the first checkbox after 8.2s
 

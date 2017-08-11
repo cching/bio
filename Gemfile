@@ -29,6 +29,7 @@ gem 'aws-sdk', '~> 2.0.0'
 
 gem 'sidekiq'
 
+gem 'sidekiq_status'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
