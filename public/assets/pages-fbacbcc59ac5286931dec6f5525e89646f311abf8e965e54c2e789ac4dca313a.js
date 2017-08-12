@@ -119,3 +119,4 @@ function InitiateImage(imageElement) {
     imageElement.addClass("image_manipulation_activated");
 }
 // animation functions for images and skills
+;

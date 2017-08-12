@@ -24,7 +24,7 @@ class ImageImport
 			# exceptions due to incorrect keys, aws server issues, or change in pkeys
 		ensure
 			cleanup
-			# remove old data
+			# remove old job data
 		end
 		
  	end

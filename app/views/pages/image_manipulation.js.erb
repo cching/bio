@@ -30,6 +30,7 @@ $(".text_log").css('visibility', 'visible').addClass("animated fadeIn");
 	<%= 2000*(i) + 2000 %>);
 	// sequence 2, 4, 6 s timeout
 <% end %> 
+// Loop through iteration to load each sequential background in demo
 
 function backgroundOut(i) {
 	setTimeout(
@@ -40,6 +41,7 @@ function backgroundOut(i) {
 			// remove in animation and add out animation
 	1400);
 }
+// Function to remove sequential background before adding another
 
 setTimeout(
 	function() {
