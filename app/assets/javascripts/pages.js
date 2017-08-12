@@ -98,7 +98,7 @@ function onScroll(event){
 
 function InitiateBar(skill_section) {
     return bar = new ProgressBar.Line(skill_section, {
-      strokeWidth: 0.2,
+      strokeWidth: 0.3,
       easing: 'easeInOut',
       duration: 1400,
       color: '#64aff4',

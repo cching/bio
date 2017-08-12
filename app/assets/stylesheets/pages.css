@@ -172,7 +172,7 @@ a.active:before {
 
 .col_experience {
   background-color: #fff;
-  min-height:35vh;
+  min-height:300px;
   padding-top:5%;
   transition:all 0.4s ease; 
   -moz-transition: all 0.4s ease; 
@@ -251,7 +251,7 @@ ul.experience_description_cont li {
 }
 
 .skill_name {
-  font-size:1em;
+  font-size:1.2em;
   color:#A6A7AA;
   padding-bottom: 0px;
   margin-bottom:0px;  
