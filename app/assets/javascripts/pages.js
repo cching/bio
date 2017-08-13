@@ -104,7 +104,7 @@ function onScroll(event){
 
     var fileElement = $("#file_storage")
 
-    if ((!fileElement.hasClass('file_storage_activated')) && (fileElement.position().top - 150 <= scrollPos && fileElement.position().top - 150 + fileElement.height() > scrollPos)) {
+    if (((!fileElement.hasClass('file_storage_activated')) && (fileElement.position().top - 150 <= scrollPos && fileElement.position().top - 150 + fileElement.height() > scrollPos)) || ((!fileElement.hasClass('file_storage_activated')) && (window.innerHeight + window.scrollY) >= document.body.offsetHeight)) {
         InitiateFile(fileElement);
     }
     // Initiate file section animation if image section is within user's page

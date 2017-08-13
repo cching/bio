@@ -13,13 +13,21 @@
 
 	var doc = $("#doc_container");
 	if (!doc.hasClass("completed")) {
-		doc.html("<iframe class='frame'src='<%= @file.human_url + '?widget=true&headers=false' %>'></iframe>");
-		// prepare the div to add the background from s3
+		doc.append("<div class='wrap'></div>");
 		doc.addClass("completed");
-		// add class to add a state to the div to prevent the action from triggering from refresh function
-		// add s3 image to div background
+		$('.wrap').html("<iframe class='frame'src='<%= @file.human_url + '?widget=true&headers=false' %>'></iframe>").hide();
+
+		setTimeout(
+			function() { 
+				$('.file_load_container').html("").css("padding", '0px 0px 0px 0px');
+				// remove load spinner
+				
+				$(".wrap").show().addClass("animated fadeIn");
+			}, 1000);
+		// prepare the div to add the background from s3
 
 		// timeout function to let image load before displaying
 	}
 <% end %>
 // Check last checkbox if job is done after cleanup
+
