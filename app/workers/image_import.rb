@@ -53,7 +53,7 @@ class ImageImport
 
  	def cleanup
  		UploadFile.where("created_at < ?", 1.days.ago).each do |file|
- 			unless file.file_id?
+ 			if file.extension.include?("png")
  				s3_composite_object(file.id).delete
  				file.delete
  			end
