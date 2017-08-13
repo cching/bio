@@ -15,7 +15,7 @@
 	if (!doc.hasClass("completed")) {
 		doc.append("<div class='wrap'></div>");
 		doc.addClass("completed");
-		$('.wrap').html("<iframe class='frame'src='<%= @file.human_url + '?widget=true&headers=false' %>'></iframe>").hide();
+		$('.wrap').html("<iframe class='frame'src='<%= @file.human_url + '?embedded=true' %>'></iframe>").hide();
 
 		setTimeout(
 			function() { 
