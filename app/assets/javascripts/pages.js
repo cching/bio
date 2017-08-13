@@ -145,6 +145,5 @@ function InitiateFile(fileElement) {
     });
     fileElement.addClass("file_storage_activated");
 }
-
 // animation functions for images and skills
 
