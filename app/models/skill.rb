@@ -3,7 +3,7 @@ class Skill < ActiveRecord::Base
 	validates_inclusion_of :proficiency, :in => 1..100
 
 	def return_float
-		self.proficiency.to_d.round(2, :truncate)/100
+		proficiency.to_d.round(2, :truncate)/100
 		# convert data integer to decimal for progress bar
 	end
 end

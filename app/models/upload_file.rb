@@ -12,7 +12,7 @@ class UploadFile < ActiveRecord::Base
 	end
 
 	def init_session
-		GoogleDrive::Session.from_service_account_key(ENV['GOOGLE_SECRETS'])
+		GoogleDrive::Session.from_service_account_key(StringIO.new(ENV['GOOGLE_CREDENTIALS']))
 		# initiates google drive session from json secret file
 	end
 
