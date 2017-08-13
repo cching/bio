@@ -1,0 +1,18 @@
+$("#file_checkbox_0").prop('checked', true);
+
+$(".file_load_container").css('visibility', 'visible').addClass("animated fadeIn");
+
+$(".file_job_id").each(function () {
+	$(this).html("(#<%= @job_id %>)");
+});
+
+var file_reload = setInterval(function(){
+	$.get("/pages/file_update_state?id=<%= @file.id %>", { 
+	});
+}, 700);
+// Refresh the image object every 0.5s to get the current state from the background job
+
+setTimeout(function() {
+    clearInterval(file_reload);
+}, 20000);
+// Kill refresh after 20s

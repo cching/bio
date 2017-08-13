@@ -7,9 +7,9 @@ var reload = setInterval(function(){
 	$.get("/pages/update_state?id=<%= @image.id %>", { 
 	});
 }, 700);
-// Refresh the image object every 0.7s to get the current state from the background job
+// Refresh the image object every 0.5s to get the current state from the background job
 
 setTimeout(function() {
     clearInterval(reload);
-}, 30000);
-// Kill refresh after 30s
+}, 20000);
+// Kill refresh after 20s

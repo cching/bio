@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('.parallax').parallax();
     // initiate parallax
 
@@ -15,6 +16,15 @@ $(document).ready(function () {
         InitiateBar(document.getElementById($(this).attr("id")));
     });
     // initiate empty skill bars on page load 
+
+    $(".btn_resume").on('click', function () {
+        $('html, body').stop().animate({
+            'scrollTop': $("#file_storage").offset().top-75
+        }, 750, 'swing', function () {
+            $(document).on("scroll", onScroll);
+        });
+        //take user to resume section on resume button click
+    });
 
     $(document).on("scroll", onScroll);
     
@@ -38,6 +48,10 @@ $(document).ready(function () {
 
         if (target == "#skills" && !$("#skills").hasClass('skills_activated')) {
             InitiateSkill($target);
+        }
+
+        if (target == "#file_storage" && !$("#file_storage").hasClass('file_storage_activated')) {
+            InitiateFile($target);
         }
         // trigger animation functions if nav link is clicked
 
@@ -86,7 +100,14 @@ function onScroll(event){
     if ((!imageElement.hasClass('image_manipulation_activated')) && (imageElement.position().top - 150 <= scrollPos && imageElement.position().top - 150 + imageElement.height() > scrollPos)) {
         InitiateImage(imageElement);
     }
-    // Initiate skill section animation if skill section is within user's page
+    // Initiate image section animation if image section is within user's page
+
+    var fileElement = $("#file_storage")
+
+    if ((!fileElement.hasClass('file_storage_activated')) && (fileElement.position().top - 150 <= scrollPos && fileElement.position().top - 150 + fileElement.height() > scrollPos)) {
+        InitiateFile(fileElement);
+    }
+    // Initiate file section animation if image section is within user's page
 }
 
 function InitiateBar(skill_section) {
@@ -118,4 +139,12 @@ function InitiateImage(imageElement) {
     });
     imageElement.addClass("image_manipulation_activated");
 }
+
+function InitiateFile(fileElement) {
+    $.get("/pages/process_file", { 
+    });
+    fileElement.addClass("file_storage_activated");
+}
+
 // animation functions for images and skills
+

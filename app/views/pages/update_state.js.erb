@@ -17,13 +17,14 @@
 		// prepare the div to add the background from s3
 		composite.addClass("composited");
 		// add class to add a state to the div to prevent the action from triggering from refresh function
-		$(".composite_background").css('background-image','url(<%= @image.public_url %>)');
+		$(".composite_background").css('background-image','url(<%= @image.public_url %>)').hide();
 		// add s3 image to div background
 		setTimeout(
 			function() { 
 				$('.load_container').html("").css("padding", '0px 0px 0px 0px');
+				// remove load spinner
 				
-				$(".composite_background").css('visibility', 'visible').addClass("animated fadeIn");
+				$(".composite_background").css('visibility', 'visible').show().addClass("animated fadeIn");
 			}, 1500);
 
 		// timeout function to let image load before displaying

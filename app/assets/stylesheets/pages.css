@@ -13,6 +13,24 @@
   min-height: 100vh;
 }
 
+.contact {
+  padding-top:20px;
+}
+
+.contact_header {
+  font-size:1.5em;
+}
+
+.contact_info {
+  padding-top:7px;
+  font-size:1em;
+  color:#A6A7AA;
+}
+
+.icon {
+  max-width:100%;
+}
+
 .navbar-default{
     background:transparent !important;
     border-bottom: 1px solid #e1e1e1 !important;
@@ -301,6 +319,14 @@ ul.experience_description_cont li {
   padding-bottom:50px;
 }
 
+.log_container {
+  padding-bottom:50px;
+}
+
+.file_load_container {
+  visibility:hidden;
+}
+
 .loader,
 .loader:before,
 .loader:after {
@@ -362,3 +388,31 @@ ul.experience_description_cont li {
 }
 
 /* load spinner source: https://projects.lukehaas.me/css-loaders/
+*/
+
+.wrap
+{
+    width: 100%;
+    height: 350px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.frame
+{
+    width: 1000px;
+    height: 700px;
+    border: 0;
+
+    -ms-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}

@@ -53,8 +53,11 @@ class ImageImport
 
  	def cleanup
  		UploadFile.where("created_at < ?", 1.days.ago).each do |file|
- 			s3_composite_object(file.id).delete
- 			file.delete
+ 			unless file.file_id?
+ 				s3_composite_object(file.id).delete
+ 				file.delete
+ 			end
+ 			# Only delete AWS objects
  		end
  		# Find upload files created more than 24 hours ago and delete both db record and s3 image record
  		@image.update(:completed => true)

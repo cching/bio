@@ -1,11 +1,20 @@
 <p class="section_text">
-	I'm a recent graduate from UC Berkeley with a B.S. in Chemical Engineering. <br/>
-	My degree concentration is Materials Science & Technology, and I've spent a few years exploring the synthesis, chemistry, and characterization of zinc-air batteries at the university.
-	<br/><br/>
-	One of my many passions is web development, with over four years of professional full stack web development.
-	From both scratch and continued development, I've constructed multiple MVC database-backed web and software projects through Ruby object-oriented development, incorporating modern web frameworks - Rails, jQuery, jQuery Mobile, and Bootstrap. I've developed the interfaces through HTML5, CSS3, and JavaScript for responsive and mobile platforms. Additionally, I've implemented multiple RESTful APIs for third-party services, such as cloud storage.
+	Additionally, I've incorporated Drive REST API to create interfaces for general file storage, management, and manipulation to host clients', schools', and students' data.
 	<br/>
 </p>
 
-<button class="btn_resume" href="/public/assets/Christopher_Ching_resume.pdf" download>Download Resume</button>
-
+<div class="row">
+	<div class="col-lg-4">
+		<div class="log_container">
+			<% file_checkbox_items.each_with_index do |item, i| %>
+				<input type="checkbox" id="file_checkbox_<%= i %>" disabled/>
+	     		<label for="file_checkbox_<%= i %>"><%= item.html_safe %></label><br/>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-lg-8 wrap" id="doc_container">
+		<div class="file_load_container">
+			<div class="loader"></div>
+		</div>
+	</div>
+</div>

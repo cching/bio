@@ -1,0 +1,25 @@
+<% if @file.file_name? %>
+	$("#file_checkbox_1").prop('checked', true);
+<% end %>
+// Check the 3rd checkbox if the image has been composited
+
+<% if @file.composited? %>
+	$("#file_checkbox_2").prop('checked', true);
+<% end %>
+// Check the 4th checkbox if the image has been uploaded
+
+<% if @file.completed? %>
+	$("#file_checkbox_3").prop('checked', true);
+
+	var doc = $("#doc_container");
+	if (!doc.hasClass("completed")) {
+		doc.html("<iframe class='frame'src='<%= @file.human_url + '?widget=true&headers=false' %>'></iframe>");
+		// prepare the div to add the background from s3
+		doc.addClass("completed");
+		// add class to add a state to the div to prevent the action from triggering from refresh function
+		// add s3 image to div background
+
+		// timeout function to let image load before displaying
+	}
+<% end %>
+// Check last checkbox if job is done after cleanup
