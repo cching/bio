@@ -32,7 +32,7 @@ class FileImport
  	def cleanup
  		UploadFile.where("created_at < ?", 1.days.ago).each do |file|
 	 		if file.extension.try(:include?, "doc")
-	 			@session.find_by_id(file.file_name).delete(permanent: true)
+	 			@session.file_by_id(file.file_name).delete(permanent: true)
 	 			file.delete
 	 		elsif file.extension.nil?
 	 			file.delete
