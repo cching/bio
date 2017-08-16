@@ -23,12 +23,16 @@
 
 .contact_info {
   padding-top:7px;
+  padding-bottom:45px;
   font-size:1em;
   color:#A6A7AA;
 }
 
 .icon {
   max-width:100%;
+  min-width:30px;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 
 .navbar-default{
@@ -86,7 +90,7 @@
   padding: 15px 15px;
   margin-right:0px;
   color: #fff !important;
-  font-size:1.5vw;
+  font-size:1.2em;
 }
 
 .navbar-right.scrolled > li > a {
@@ -282,6 +286,14 @@ ul.experience_description_cont li {
   background-repeat: no-repeat;
   width: 95%;
   height:500px;
+}
+
+#composite {
+  min-height:500px;
+}
+
+#doc_container {
+  min-height:200px;
 }
 
 .composite_background {

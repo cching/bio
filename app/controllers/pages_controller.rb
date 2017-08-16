@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
 
   def process_image
-    @image = UploadFile.create
+    @image = UploadFile.create 
     @job_id = ImageImport.perform_async(@image.id)
     # Queue image for background job
   	respond_to :js
