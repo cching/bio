@@ -1,7 +1,4 @@
 Aws.config.update({
-  credentials: Aws::Credentials.new(ENV['ACCESS_KEY'], ENV['SECRET_KEY'])
+  credentials: Aws::Credentials.new(ENV['ACCESS_KEY'], ENV['SECRET_KEY'], {region: ENV['AWS_REGION']})
 })
-#set access_key_id and secret_key
-
-Aws.config.update({region: ENV['AWS_REGION']})
-#update region
+#set access_key_id and secret_key, set region
