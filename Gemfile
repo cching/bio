@@ -25,14 +25,19 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "rmagick", :require => "RMagick"
+# ruby adapter for ImageMagick for image manipulation
 
 gem 'aws-sdk', '~> 2.0.0'
+# amazon sdk for s3 image and file storage
 
 gem 'sidekiq'
-
-gem 'sidekiq_status'
+# sidekiq 5 for concurrency and background jobs
 
 gem 'google_drive'
+# drive rest api gem for ruby implementation
+
+gem 'rack-host-redirect'
+# rack redirect for naked domain redirect
 
 
 # Use ActiveModel has_secure_password
